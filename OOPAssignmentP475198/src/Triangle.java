@@ -12,18 +12,9 @@ public class Triangle extends Shape {
 
     @Override
     public void scale(int factor, boolean sign) {
-        int scaleFactor;
-        if (sign)
-        {
-            scaleFactor = factor;
-        } else
-        {
-            scaleFactor = -factor;
-        }
-
-        vertexA.scale(scaleFactor, true);
-        vertexB.scale(scaleFactor, true);
-        vertexC.scale(scaleFactor, true);
+        vertexA.scale(factor, sign);
+        vertexB.scale(factor, sign);
+        vertexC.scale(factor, sign);
     }
 
     @Override
@@ -33,10 +24,6 @@ public class Triangle extends Shape {
         double c = vertexC.distance(vertexA);
         double s = (a + b + c) / 2.0;
         double area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
-
-        if (area == 0) {
-            System.out.println("This is not a valid triangle.");
-        }
 
         return area;
     }
@@ -58,6 +45,6 @@ public class Triangle extends Shape {
 
     @Override
     public String display() {
-        return "Triangle: A=" + vertexA.display() + ", B=" + vertexB.display() + ", C=" + vertexC.display();
+        return "Triangle at:\n" + vertexA.display() + "\n" + vertexB.display() + "\n" + vertexC.display();
     }
 }

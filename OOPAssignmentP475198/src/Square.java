@@ -22,9 +22,12 @@ public class Square extends Shape{
 
     @Override
     public void scale(int factor, boolean sign) {
-        if (sign) {
+        if (sign)
+        {
             side *= factor;
-        } else {
+        }
+        else
+        {
             side /= factor;
         }
     }
@@ -32,10 +35,6 @@ public class Square extends Shape{
     @Override
     public String display() {
         String s = "Square at " + position.display() + ", side: " + side;
-        if(position.getY()-side<0 || position.getX()-side<0)
-        {
-            s+="\nYour square is out of positive range";
-        }
         return s;
     }
 }

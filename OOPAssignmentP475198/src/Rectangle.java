@@ -41,8 +41,6 @@ public class Rectangle extends Shape {
 
     @Override
     public String display() {
-        return "Rectangle at " + position.display() +
-                ", width: " + width +
-                ", height: " + height;
+        return "Rectangle at " + position.display() + ", width: " + width + ", height: " + height;
     }
 }
