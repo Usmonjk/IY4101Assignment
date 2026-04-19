@@ -17,7 +17,11 @@ public class Menu {
         System.out.println("4. Triangle");
 
         int type = input.nextInt();
-
+        if(type<1 || type>4)
+        {
+            System.out.println("Invalid shape type");
+            return;
+        }
         System.out.print("Enter position (x y) with space: ");
         int x = input.nextInt();
         int y = input.nextInt();
@@ -78,9 +82,6 @@ public class Menu {
             {
                 shapeList.addShape(MyTriangle);
             }
-        }
-        else {
-            System.out.println("Invalid shape type");
         }
     }
 

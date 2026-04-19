@@ -1,3 +1,4 @@
+import javax.xml.transform.Source;
 import java.util.ArrayList;
 
 public class ShapeList {
@@ -16,6 +17,7 @@ public class ShapeList {
         {
             shape.translate(dx, dy);
         }
+        System.out.println("Shapes translated!");
     }
 
     public Shape getShape(int pos) {
@@ -32,6 +34,7 @@ public class ShapeList {
     public Shape removeShape(int pos) {
         if (pos >= 0 && pos < listOfShapes.size())
         {
+            System.out.println("Shape removed!");
             return listOfShapes.remove(pos);
         } else
         {
@@ -67,14 +70,15 @@ public class ShapeList {
         {
             shape.scale(factor, sign);
         }
+        System.out.println("Shapes are scaled");
     }
 
     public String display() {
-        String result = "";
+        StringBuilder result = new StringBuilder("Index starts with 1:\n");
         for (Shape shape : listOfShapes)
         {
-            result += shape.display() + "\n";
+            result.append(shape.display()).append("\n");
         }
-        return result;
+        return result.toString();
     }
 }
